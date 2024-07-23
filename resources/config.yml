@@ -1,0 +1,13 @@
+# GitHub URL for the language files
+github-url: "https://raw.github.com/StimoMC/lang/master/"
+
+# Supported languages (The language files must be named as indicated there.)
+languages:
+  - "en_US"
+  - "de_DE"
+
+# Player file path (Default: plugin_data/)
+player_path: default
+
+# Default selected language
+default-lang: "en_US"
