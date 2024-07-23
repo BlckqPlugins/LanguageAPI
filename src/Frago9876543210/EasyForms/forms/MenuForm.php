@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace Frago9876543210\EasyForms\forms;
 use Closure;
-use Core\Core\CorePlayer;
 use Frago9876543210\EasyForms\elements\Button;
 use pocketmine\{form\FormValidationException, player\Player, utils\Utils};
 
@@ -65,7 +64,7 @@ class MenuForm extends Form{
 	 */
 	public function setOnSubmit(?Closure $onSubmit): self{
 		if ($onSubmit !== null) {
-			Utils::validateCallableSignature(function (CorePlayer $player, Button $selected): void{
+			Utils::validateCallableSignature(function (Player $player, Button $selected): void{
 			}, $onSubmit);
 			$this->onSubmit = $onSubmit;
 		}
@@ -79,7 +78,7 @@ class MenuForm extends Form{
 	 */
 	public function setOnClose(?Closure $onClose): self{
 		if ($onClose !== null) {
-			Utils::validateCallableSignature(function (CorePlayer $player): void{
+			Utils::validateCallableSignature(function (Player $player): void{
 			}, $onClose);
 			$this->onClose = $onClose;
 		}

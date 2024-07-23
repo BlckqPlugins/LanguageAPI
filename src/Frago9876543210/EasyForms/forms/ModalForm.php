@@ -2,7 +2,6 @@
 declare(strict_types=1);
 namespace Frago9876543210\EasyForms\forms;
 use Closure;
-use Core\Core\CorePlayer;
 use pocketmine\{form\FormValidationException, player\Player, utils\Utils};
 
 use function gettype;
@@ -43,9 +42,9 @@ class ModalForm extends Form{
 	 * @return ModalForm
 	 */
 	public static function createConfirmForm(string $title, string $text, Closure $onConfirm): self{
-		Utils::validateCallableSignature(function (CorePlayer $player): void{
+		Utils::validateCallableSignature(function (Player $player): void{
 		}, $onConfirm);
-		return new self($title, $text, function (CorePlayer $player, bool $response) use ($onConfirm): void{
+		return new self($title, $text, function (Player $player, bool $response) use ($onConfirm): void{
 			if ($response) {
 				$onConfirm($player);
 			}
